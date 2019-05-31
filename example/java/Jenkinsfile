@@ -7,11 +7,11 @@ pipeline {
       steps {
         sh 'build"'
       }
-      stage('Post Build') {
+    }
+    stage('Post Build') {
         steps {
           sh 'post build'
         }
-      }
-    }
+   }
   }
 }
