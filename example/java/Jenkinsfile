@@ -7,19 +7,23 @@ pipeline {
     stage('pre build') {
       steps {
         sh "echo 'pre build'"
-        sh "sleep 5"
+        sh "sleep 1"
+        script {
+          def helloMsg=sayHello("pipeline")
+          echo "${helloMsg}"
+        }
       }
     }
     stage('build') {
       steps {
         sh "echo 'build'"
-        sh "sleep 10"
+        sh "sleep 1"
       }
     }
     stage("post build") {
       steps {
         sh "echo 'post build'"
-        sh "sleep 15"
+        sh "sleep 1"
       }
     }
   }
