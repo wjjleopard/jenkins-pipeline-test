@@ -1,5 +1,6 @@
 #!/usr/bin/env groovy
 
+@Library("jenkins-shared-library-test@master")_
 pipeline {
   agent { label "build" }
   stages {
