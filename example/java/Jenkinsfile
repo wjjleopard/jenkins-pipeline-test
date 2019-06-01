@@ -9,9 +9,14 @@ pipeline {
       }
     }
     stage('Post Build') {
+      steps {
+        sh 'post build'
+      }
+      stage("post post stage") {
         steps {
-          sh 'post build'
+          sh 'post post build'
         }
-   }
+      }
+    }
   }
 }
