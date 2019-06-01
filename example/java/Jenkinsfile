@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-  agent {label: "build"}
+  agent { label "build" }
   stages {
     stage('Build') {
       steps {
@@ -12,10 +12,10 @@ pipeline {
       steps {
         sh 'post build'
       }
-      stage("post post stage") {
-        steps {
-          sh 'post post build'
-        }
+    }
+    stage("post post stage") {
+      steps {
+        sh 'post post build'
       }
     }
   }
