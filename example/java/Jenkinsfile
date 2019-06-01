@@ -3,19 +3,19 @@
 pipeline {
   agent { label "build" }
   stages {
-    stage('Build') {
+    stage('pre build') {
       steps {
-        sh 'build'
+        sh "echo 'pre build'"
       }
     }
-    stage('Post Build') {
+    stage('build') {
       steps {
-        sh 'post build'
+        sh "echo 'build'"
       }
     }
-    stage("post post stage") {
+    stage("post build") {
       steps {
-        sh 'post post build'
+        sh "echo 'post build'"
       }
     }
   }
